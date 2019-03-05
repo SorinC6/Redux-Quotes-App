@@ -4,6 +4,7 @@ export const ADD_QUOTE = 'ADD_QUOTE';
 export const TOGGLE_QUOTE = 'TOGGLE_QUOTE';
 export const QUOTE_OF_THE_DAY = 'QUOTE_OF_THE_DAY';
 export const DELETE_QUOTE = 'DELETE_QUOTE';
+export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
 
 export const addQuote = (author, text) => {
 	return {
@@ -24,7 +25,7 @@ export const toggleQuote = (id) => {
 	};
 };
 
-export const quoteOfTheDay = (id) => {
+export const makeQuoteOfTheDay = (id) => {
 	return {
 		type: QUOTE_OF_THE_DAY,
 		payload: id
@@ -35,5 +36,11 @@ export const deleteQuote = (id) => {
 	return {
 		type: DELETE_QUOTE,
 		payload: id
+	};
+};
+
+export const clearCompleted = (quote) => {
+	return {
+		type: CLEAR_COMPLETED
 	};
 };

@@ -1,11 +1,13 @@
 import React from 'react';
 
 const Quote = (props) => {
+	const { author, text, id } = props.quote;
 	return (
-		<React.Fragment>
-			<h2>{props.quote.author}</h2>
-			<p>{props.quote.text}</p>
-		</React.Fragment>
+		<div onClick={() => props.toggleQuote(id)}>
+			<h2>{author}</h2>
+			<p>{text}</p>
+			<button onClick={() => props.deleteQuote(id)}>Delete Quote</button>
+		</div>
 	);
 };
 
